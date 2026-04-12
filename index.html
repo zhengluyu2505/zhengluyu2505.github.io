@@ -13,34 +13,72 @@
 
         body {
             font-family: 'Palatino', 'Times New Roman', '宋体', serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #1a1a1a;
             background: #fafafa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 30px 20px;
         }
 
         .container {
-            max-width: 850px;
-            margin: 0 auto;
+            max-width: 780px;
+            width: 100%;
             background: white;
-            padding: 40px 45px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-radius: 4px;
+            padding: 45px 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            text-align: center;
         }
 
-        /* 语言切换按钮 */
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .nav-links a.active {
+            color: #1a1a1a;
+            font-weight: bold;
+            border-bottom-color: #1a1a1a;
+        }
+
         .lang-switch {
             display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 8px;
         }
 
         .lang-btn {
             background: none;
             border: 1px solid #ccc;
-            padding: 5px 14px;
-            font-size: 14px;
+            padding: 4px 12px;
+            font-size: 13px;
             cursor: pointer;
             border-radius: 20px;
             color: #555;
@@ -57,49 +95,47 @@
             background: #eee;
         }
 
-        /* 页眉区域 */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 18px;
-        }
-
-        .name {
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
+        /* 照片 */
         .photo {
-            width: 95px;
-            height: 120px;
-            background: #e0e0e0;
-            border-radius: 4px;
+            width: 120px;
+            height: 150px;
+            margin: 0 auto 20px;
+            background: #e8e8e8;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #888;
-            font-size: 12px;
-            text-align: center;
+            font-size: 13px;
+            overflow: hidden;
         }
 
         .photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 4px;
         }
 
+        /* 姓名 */
+        .name {
+            font-size: 34px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        /* 单位 */
         .affiliation {
-            font-size: 16px;
-            color: #333;
-            margin: 5px 0 3px;
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 5px;
         }
 
+        /* 邮箱 */
         .email {
             font-size: 15px;
-            color: #555;
+            color: #666;
+            margin-bottom: 18px;
         }
 
         .email a {
@@ -111,100 +147,73 @@
             text-decoration: underline;
         }
 
-        /* 章节样式 */
-        .section {
-            margin-top: 28px;
+        /* 教育背景（个人信息区域） */
+        .education-info {
+            text-align: left;
+            max-width: 480px;
+            margin: 0 auto 30px;
+            padding: 15px 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            font-size: 14px;
         }
 
+        .edu-item {
+            margin-bottom: 10px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .edu-school {
+            color: #444;
+        }
+
+        .edu-year {
+            color: #777;
+            font-size: 13px;
+            float: right;
+        }
+
+        .edu-detail {
+            color: #666;
+            font-size: 13px;
+            margin-top: 2px;
+            padding-left: 8px;
+            border-left: 2px solid #ccc;
+        }
+
+        /* 分割线 */
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #1a1a1a;
+            margin: 0 auto 25px;
+        }
+
+        /* 研究兴趣 */
         .section-title {
             font-size: 18px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1.5px solid #1a1a1a;
-            padding-bottom: 5px;
-            margin-bottom: 12px;
+            letter-spacing: 2px;
+            color: #555;
+            margin-bottom: 18px;
         }
 
-        /* 条目样式 */
-        .cv-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2px;
+        .interests {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #2a2a2a;
         }
 
-        .cv-item-left {
-            font-weight: bold;
-        }
-
-        .cv-item-right {
-            color: #444;
-        }
-
-        .cv-subitem {
-            display: flex;
-            justify-content: space-between;
-            font-style: italic;
-            margin-bottom: 2px;
-        }
-
-        .detail-text {
-            margin-left: 0;
-            margin-bottom: 8px;
-            color: #444;
-        }
-
-        .pub-list {
-            list-style: none;
-            margin-top: 5px;
-        }
-
-        .pub-list li {
-            margin-bottom: 10px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .pub-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1a1a1a;
-        }
-
-        .talk-list {
-            list-style: none;
-        }
-
-        .talk-list li {
-            margin-bottom: 10px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .talk-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #1a1a1a;
-        }
-
-        .inline-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* 中英文内容切换 */
+        /* 中英文切换 */
         .lang-content {
             display: none;
         }
@@ -216,210 +225,141 @@
         /* 响应式 */
         @media (max-width: 600px) {
             .container {
-                padding: 25px 18px;
+                padding: 30px 18px;
             }
-            .header {
-                flex-direction: column-reverse;
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
             }
-            .photo {
-                margin-bottom: 15px;
+            .nav-links {
+                gap: 18px;
             }
             .name {
-                font-size: 26px;
+                font-size: 28px;
+            }
+            .affiliation {
+                font-size: 15px;
+            }
+            .education-info {
+                padding: 12px 15px;
+            }
+            .edu-year {
+                float: none;
+                display: block;
+                margin-top: 2px;
+            }
+            .interests {
+                font-size: 15px;
             }
         }
 
-        /* 分隔符 */
-        .separator {
-            margin: 0 8px;
-            color: #aaa;
-        }
-
-        .note {
-            color: #666;
-            font-style: italic;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
+        /* 清除浮动 */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 语言切换 -->
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang="zh">中文</button>
-            <button class="lang-btn" data-lang="en">English</button>
+        <!-- 统一导航栏 -->
+        <div class="navbar">
+            <div class="nav-links">
+                <a href="index.html" class="active" data-zh="主页" data-en="Home">主页</a>
+                <a href="research.html" data-zh="论文与报告" data-en="Research">论文与报告</a>
+                <a href="others.html" data-zh="其他经历" data-en="Others">其他经历</a>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
         </div>
 
-        <!-- 页眉（共用） -->
-        <div class="header">
-            <div>
-                <div class="name" data-zh="郑璐予" data-en="Luyu Zheng (郑璐予)">郑璐予</div>
-                <div class="affiliation" data-zh="清华大学 丘成桐数学科学中心" data-en="Yau Mathematical Sciences Center, Tsinghua University">清华大学 丘成桐数学科学中心</div>
-                <div class="email">
-                    📧 <a href="mailto:zhengluyu84@gmail.com">zhengluyu84@gmail.com</a>
-                </div>
-            </div>
-            <div class="photo">
-    <img src="1602810336209.jpg" alt="Luyu Zheng">
-</div>
+        <!-- 照片 -->
+        <div class="photo">
+            <!-- <img src="photo.jpg" alt="Luyu Zheng"> -->
+            📷
         </div>
 
         <!-- 中文内容 -->
         <div class="lang-content active" id="content-zh">
-            <!-- 教育经历 -->
-            <div class="section">
-                <div class="section-title">教育经历</div>
-                <div class="cv-item">
-                    <span class="cv-item-left">理学博士（数学）</span>
-                    <span class="cv-item-right">2020年 — 2025年</span>
+            <div class="name">郑璐予</div>
+            <div class="affiliation">清华大学 丘成桐数学科学中心</div>
+            <div class="email">📧 <a href="mailto:zhengluyu84@gmail.com">zhengluyu84@gmail.com</a></div>
+            
+            <!-- 教育背景 -->
+            <div class="education-info">
+                <div class="edu-item clearfix">
+                    <span class="edu-degree">理学博士（数学）</span>
+                    <span class="edu-year">2020 — 2025</span>
+                    <div class="edu-school">清华大学，导师：Will Donovan</div>
+                    <div class="edu-detail">博士论文：Some braid groups actions associated with exceptional surfaces in 3-folds</div>
                 </div>
-                <div class="detail-text">清华大学，导师：Will Donovan</div>
-                <div class="detail-text" style="margin-top:-3px;">博士学位论文：Some braid groups actions associated with exceptional surfaces in 3-folds</div>
-                
-                <div style="margin-top: 10px;">
-                    <div class="cv-item">
-                        <span class="cv-item-left">理学学士（数学与应用数学）</span>
-                        <span class="cv-item-right">2015年 — 2020年</span>
-                    </div>
-                    <div class="detail-text">华东师范大学（上海）</div>
+                <div class="edu-item">
+                    <span class="edu-degree">理学学士（数学与应用数学）</span>
+                    <span class="edu-year">2015 — 2020</span>
+                    <div class="edu-school">华东师范大学（上海）</div>
                 </div>
             </div>
-
-            <!-- 研究方向 -->
-            <div class="section">
-                <div class="section-title">研究兴趣</div>
-                <div class="detail-text">导出范畴；代数辫群作用；Bridgeland 稳定性条件；几何不变理论（GIT）</div>
-            </div>
-
-            <!-- 论文与预印本 -->
-            <div class="section">
-                <div class="section-title">论文与预印本</div>
-                <ul class="pub-list">
-                    <li><em>Quiver braid group action for a 3-fold crepant resolution</em>. With W. Donovan. Preprint, <a href="https://arxiv.org/abs/2512.19140" target="_blank">arXiv:2512.19140</a>.</li>
-                    <li><em>Some faithful algebraic braid twist group actions for 3-fold crepant resolutions</em>, Submitting.</li>
-                    <li><em>General algebraic braid twist group actions on G-Hilb(ℂ³)</em>, In preparation.</li>
-                </ul>
-            </div>
-
-            <!-- 学术报告与海报 -->
-            <div class="section">
-                <div class="section-title">学术报告与海报</div>
-                <ul class="talk-list">
-                    <li><em>Exceptional components in G-Hilbert scheme and associated group actions</em>，华东师范大学数学科学学院，2024年1月。</li>
-                    <li><em>Exceptional surfaces in 3-folds and associated group actions</em>，墨尔本大学数学与统计学院，2024年4月。</li>
-                    <li>海报展示：<em>Quiver braid group actions for 3-fold crepant resolutions</em>，AOWM × IPMU 研讨会，Kavli 数物连携宇宙研究所，2026年3月。</li>
-                </ul>
-            </div>
-
-            <!-- 教学经历 -->
-            <div class="section">
-                <div class="section-title">教学经历</div>
-                <div class="cv-item">
-                    <span class="cv-item-left">助教</span>
-                    <span class="cv-item-right">2020年 — 2023年</span>
-                </div>
-                <div class="detail-text">《线性代数》《高等线性代数选讲》《李群与李代数》，清华大学</div>
-            </div>
-
-            <!-- 学生研讨班 -->
-            <div class="section">
-                <div class="section-title">学生研讨班</div>
-                <div class="detail-text">代数 D-模（主讲人），2021年； 混合 Hodge 结构（组织者与主讲人），2022年</div>
-            </div>
-
-            <!-- 其他学术活动 -->
-            <div class="section">
-                <div class="section-title">其他学术活动</div>
-                <div class="detail-text">“红外范畴的同调代数”研讨会（共同组织者），清华三亚国际数学论坛，2023年</div>
+            
+            <div class="divider"></div>
+            
+            <div class="section-title">研究兴趣</div>
+            <div class="interests">
+                导出范畴；代数辫群作用；<br>
+                Bridgeland 稳定性条件；几何不变理论（GIT）
             </div>
         </div>
 
         <!-- 英文内容 -->
         <div class="lang-content" id="content-en">
+            <div class="name">Luyu Zheng</div>
+            <div class="affiliation">Yau Mathematical Sciences Center, Tsinghua University</div>
+            <div class="email">📧 <a href="mailto:zhengluyu84@gmail.com">zhengluyu84@gmail.com</a></div>
+            
             <!-- Education -->
-            <div class="section">
-                <div class="section-title">Education</div>
-                <div class="cv-item">
-                    <span class="cv-item-left">Ph.D. in Mathematics</span>
-                    <span class="cv-item-right">2020 – 2025</span>
+            <div class="education-info">
+                <div class="edu-item clearfix">
+                    <span class="edu-degree">Ph.D. in Mathematics</span>
+                    <span class="edu-year">2020 – 2025</span>
+                    <div class="edu-school">Tsinghua University, Supervisor: Will Donovan</div>
+                    <div class="edu-detail">Thesis: Some braid groups actions associated with exceptional surfaces in 3-folds</div>
                 </div>
-                <div class="detail-text">Tsinghua University, Supervisor: Will Donovan</div>
-                <div class="detail-text" style="margin-top:-3px;">Thesis: Some braid groups actions associated with exceptional surfaces in 3-folds</div>
-                
-                <div style="margin-top: 10px;">
-                    <div class="cv-item">
-                        <span class="cv-item-left">B.A. in Mathematics and Applied Mathematics</span>
-                        <span class="cv-item-right">2015 – 2020</span>
-                    </div>
-                    <div class="detail-text">East China Normal University (Shanghai)</div>
+                <div class="edu-item">
+                    <span class="edu-degree">B.A. in Mathematics and Applied Mathematics</span>
+                    <span class="edu-year">2015 – 2020</span>
+                    <div class="edu-school">East China Normal University (Shanghai)</div>
                 </div>
             </div>
-
-            <!-- Research Interests -->
-            <div class="section">
-                <div class="section-title">Research Interests</div>
-                <div class="detail-text">Derived and triangulated categories; algebraic braid group actions; Bridgeland stability conditions; geometric representation theory; quiver mutations</div>
-            </div>
-
-            <!-- Publications -->
-            <div class="section">
-                <div class="section-title">Publications and Preprints</div>
-                <ul class="pub-list">
-                    <li><em>Quiver braid group action for a 3-fold crepant resolution</em>. With W. Donovan. Preprint, <a href="https://arxiv.org/abs/2512.19140" target="_blank">arXiv:2512.19140</a>.</li>
-                    <li><em>Some faithful algebraic braid twist group actions for 3-fold crepant resolutions</em>, Submitting.</li>
-                    <li><em>General algebraic braid twist group actions on G-Hilb(ℂ³)</em>, In preparation.</li>
-                </ul>
-            </div>
-
-            <!-- Talks and Posters -->
-            <div class="section">
-                <div class="section-title">Talks and Posters</div>
-                <ul class="talk-list">
-                    <li><em>Exceptional surfaces in 3-folds and associated group actions</em>, School of Mathematics and Statistics, University of Melbourne, April 2024.</li>
-                    <li>Poster presentation: <em>Quiver braid group actions for 3-fold crepant resolutions</em>, AOWM × IPMU Workshop, Kavli Institute for the Physics and Mathematics of the Universe, March 2026.</li>
-                </ul>
-            </div>
-
-            <!-- Teaching -->
-            <div class="section">
-                <div class="section-title">Teaching Experience</div>
-                <div class="cv-item">
-                    <span class="cv-item-left">Teaching Assistant</span>
-                    <span class="cv-item-right">2020 – 2023</span>
-                </div>
-                <div class="detail-text">Linear Algebra, Advanced Linear Algebra, Lie Groups and Lie Algebras, Tsinghua University</div>
-            </div>
-
-            <!-- Seminars -->
-            <div class="section">
-                <div class="section-title">Student Seminars</div>
-                <div class="detail-text">Algebraic D-modules (Main Speaker), 2021; Mixed Hodge Structures (Organizer and Main Speaker), 2022</div>
-            </div>
-
-            <!-- Organization -->
-            <div class="section">
-                <div class="section-title">Organization</div>
-                <div class="detail-text">Workshop "Homological algebra of the infrared" (co-organizer), TSIMF, Sanya, 2023</div>
+            
+            <div class="divider"></div>
+            
+            <div class="section-title">Research Interests</div>
+            <div class="interests">
+                Derived and triangulated categories;<br>
+                algebraic braid group actions;<br>
+                Bridgeland stability conditions;<br>
+                geometric representation theory;<br>
+                quiver mutations
             </div>
         </div>
     </div>
 
     <script>
-        // 语言切换功能
+        // 语言切换功能 + 保持导航文字同步
         const zhBtn = document.querySelector('[data-lang="zh"]');
         const enBtn = document.querySelector('[data-lang="en"]');
         const contentZh = document.getElementById('content-zh');
         const contentEn = document.getElementById('content-en');
-        const nameElement = document.querySelector('.name');
-        const affiliationElement = document.querySelector('.affiliation');
-
-        // 存储原始文本
-        const texts = {
-            name: { zh: '郑璐予', en: 'Luyu Zheng (郑璐予)' },
-            affiliation: { zh: '清华大学 丘成桐数学科学中心', en: 'Yau Mathematical Sciences Center, Tsinghua University' }
+        
+        // 导航链接
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        // 存储导航文字
+        const navTexts = {
+            zh: ['主页', '论文与报告', '其他经历'],
+            en: ['Home', 'Research', 'Others']
         };
 
         function switchLang(lang) {
@@ -431,11 +371,28 @@
             contentZh.classList.toggle('active', lang === 'zh');
             contentEn.classList.toggle('active', lang === 'en');
             
-            // 更新页眉文字
-            nameElement.textContent = texts.name[lang];
-            affiliationElement.textContent = texts.affiliation[lang];
+            // 更新导航文字
+            navLinks.forEach((link, index) => {
+                link.textContent = navTexts[lang][index];
+            });
+            
+            // 保存语言偏好到 localStorage
+            localStorage.setItem('preferredLang', lang);
         }
 
+        // 从 localStorage 读取保存的语言偏好
+        const savedLang = localStorage.getItem('preferredLang') || 'zh';
+        
+        // 初始化语言
+        zhBtn.classList.toggle('active', savedLang === 'zh');
+        enBtn.classList.toggle('active', savedLang === 'en');
+        contentZh.classList.toggle('active', savedLang === 'zh');
+        contentEn.classList.toggle('active', savedLang === 'en');
+        navLinks.forEach((link, index) => {
+            link.textContent = navTexts[savedLang][index];
+        });
+
+        // 绑定点击事件
         zhBtn.addEventListener('click', () => switchLang('zh'));
         enBtn.addEventListener('click', () => switchLang('en'));
     </script>
