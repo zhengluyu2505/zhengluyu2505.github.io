@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论文与报告 · Research — 郑璐予</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Palatino', 'Times New Roman', '宋体', serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 45px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1a1a1a;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .nav-links a.active {
+            color: #1a1a1a;
+            font-weight: bold;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #ccc;
+            padding: 4px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 20px;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .lang-btn:hover {
+            background: #eee;
+        }
+
+        /* 章节样式 */
+        .section {
+            margin-top: 35px;
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* 列表 */
+        .pub-list, .talk-list {
+            list-style: none;
+        }
+
+        .pub-list li, .talk-list li {
+            margin-bottom: 16px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .pub-list li::before, .talk-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-size: 18px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* 中英文切换 */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 统一导航栏 -->
+        <div class="navbar">
+            <div class="nav-links">
+                <a href="index.html" data-zh="主页" data-en="Home">主页</a>
+                <a href="research.html" class="active" data-zh="论文与报告" data-en="Research">论文与报告</a>
+                <a href="others.html" data-zh="其他经历" data-en="Others">其他经历</a>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+
+        <!-- 中文内容 -->
+        <div class="lang-content active" id="content-zh">
+            <div class="section">
+                <div class="section-title">论文与预印本</div>
+                <ul class="pub-list">
+                    <li><em>Quiver braid group action for a 3-fold crepant resolution</em>. With W. Donovan. Preprint, <a href="https://arxiv.org/abs/2512.19140" target="_blank">arXiv:2512.19140</a>.</li>
+                    <li><em>Some faithful algebraic braid twist group actions for 3-fold crepant resolutions</em>, 投稿中.</li>
+                    <li><em>General algebraic braid twist group actions on G-Hilb(ℂ³)</em>, 准备中.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">学术报告与海报</div>
+                <ul class="talk-list">
+                    <li><em>Exceptional components in G-Hilbert scheme and associated group actions</em>，华东师范大学数学科学学院，2024年1月。</li>
+                    <li><em>Exceptional surfaces in 3-folds and associated group actions</em>，墨尔本大学数学与统计学院，2024年4月。</li>
+                    <li>海报展示：<em>Quiver braid group actions for 3-fold crepant resolutions</em>，AOWM × IPMU 研讨会，Kavli 数物连携宇宙研究所，2026年3月。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 英文内容 -->
+        <div class="lang-content" id="content-en">
+            <div class="section">
+                <div class="section-title">Publications and Preprints</div>
+                <ul class="pub-list">
+                    <li><em>Quiver braid group action for a 3-fold crepant resolution</em>. With W. Donovan. Preprint, <a href="https://arxiv.org/abs/2512.19140" target="_blank">arXiv:2512.19140</a>.</li>
+                    <li><em>Some faithful algebraic braid twist group actions for 3-fold crepant resolutions</em>, submitting.</li>
+                    <li><em>General algebraic braid twist group actions on G-Hilb(ℂ³)</em>, in preparation.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Talks and Posters</div>
+                <ul class="talk-list">
+                    <li><em>Exceptional surfaces in 3-folds and associated group actions</em>, School of Mathematics and Statistics, University of Melbourne, April 2024.</li>
+                    <li>Poster presentation: <em>Quiver braid group actions for 3-fold crepant resolutions</em>, AOWM × IPMU Workshop, Kavli Institute for the Physics and Mathematics of the Universe, March 2026.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 导航文字
+        const navTexts = {
+            zh: ['主页', '论文与报告', '其他经历'],
+            en: ['Home', 'Research', 'Others']
+        };
+
+        // 语言切换
+        const zhBtn = document.querySelector('[data-lang="zh"]');
+        const enBtn = document.querySelector('[data-lang="en"]');
+        const contentZh = document.getElementById('content-zh');
+        const contentEn = document.getElementById('content-en');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function switchLang(lang) {
+            zhBtn.classList.toggle('active', lang === 'zh');
+            enBtn.classList.toggle('active', lang === 'en');
+            contentZh.classList.toggle('active', lang === 'zh');
+            contentEn.classList.toggle('active', lang === 'en');
+            
+            navLinks.forEach((link, index) => {
+                link.textContent = navTexts[lang][index];
+            });
+            
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // 初始化
+        const savedLang = localStorage.getItem('preferredLang') || 'zh';
+        zhBtn.classList.toggle('active', savedLang === 'zh');
+        enBtn.classList.toggle('active', savedLang === 'en');
+        contentZh.classList.toggle('active', savedLang === 'zh');
+        contentEn.classList.toggle('active', savedLang === 'en');
+        navLinks.forEach((link, index) => {
+            link.textContent = navTexts[savedLang][index];
+        });
+
+        zhBtn.addEventListener('click', () => switchLang('zh'));
+        enBtn.addEventListener('click', () => switchLang('en'));
+    </script>
+</body>
+</html>
